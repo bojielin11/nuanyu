@@ -3,11 +3,11 @@ App({
     // Port 5004 is an ADB loopback socket. The EXE exposes the mini-program
     // gateway on the PC's LAN address and port 5005.
     //
-    // 注意：电脑在热点下的 IP 是 DHCP 动态分配的（例如 172.20.10.13），
-    // 换一次网络就变一次。apiBaseUrl 仍作为"首选地址"优先尝试，但失效时
-    // 小程序会自动按 discovery 里的子网扫描 5005 网关（命中即缓存），
-    // 实现"连热点后零配置可用"。
-    apiBaseUrl: "http://192.168.5.220:5005",
+    // 注意：电脑的 IP 是 DHCP 动态分配的，换一次网络就变一次。
+    // 这里刻意不内置任何局域网地址：apiBaseUrl 留空即可，小程序会自动按
+    // discovery 里的子网扫描 5005 网关（命中即缓存），实现零配置可用；
+    // 如需指定首选地址，可手动填 http://电脑IP:5005。
+    apiBaseUrl: "",
     apiFallbackUrls: ["http://127.0.0.1:5005"],
     // 局域网自动发现（抄底）配置：
     //   port      —— 暖语 EXE 小程序网关端口
