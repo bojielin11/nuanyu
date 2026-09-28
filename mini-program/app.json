@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/chat/chat",
+    "pages/focus/focus",
+    "pages/mood/mood",
+    "pages/device/device"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#FFF9EF",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#968F83",
+    "selectedColor": "#C98B25",
+    "backgroundColor": "#FFFDF9",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "今日"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "陪伴"
+      },
+      {
+        "pagePath": "pages/focus/focus",
+        "text": "专注"
+      },
+      {
+        "pagePath": "pages/mood/mood",
+        "text": "心情"
+      },
+      {
+        "pagePath": "pages/device/device",
+        "text": "小陪"
+      }
+    ]
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

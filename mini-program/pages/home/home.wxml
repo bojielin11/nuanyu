@@ -1,0 +1,70 @@
+<view class="page">
+  <view class="eyebrow">TODAY · XIAOPEI</view>
+  <view class="title">早上好，朋友</view>
+  <view class="subtitle">和小陪一起，把今天过得轻一点</view>
+
+  <view class="card hero">
+    <view class="badge {{state ? 'online' : 'offline'}}">
+      {{state ? '小陪在线' : (error ? '连接失败' : '连接中…')}}
+    </view>
+    <view class="hero-title">{{greeting || '正在连接小陪…'}}</view>
+    <view wx:if="{{error}}" class="hero-error">{{error}}</view>
+    <view class="hero-copy" wx:if="{{lastUpdate}}">最后更新 {{lastUpdate}}</view>
+    <view class="sun"></view>
+  </view>
+
+  <view class="card" wx:if="{{statusLines.length}}">
+    <view class="section-title">小陪状态</view>
+    <view class="status-list">
+      <view class="status-row" wx:for="{{statusLines}}" wx:key="label">
+        <view class="status-label">{{item.label}}</view>
+        <view class="status-value {{item.ok === false ? 'bad' : (item.ok ? 'good' : '')}}">
+          {{item.value}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{weather}}">
+    <view class="section-title">今日天气</view>
+    <view class="weather-line">
+      <text class="weather-temp">{{weather.temp}}°C</text>
+      <text class="weather-desc">{{weather.city}} · {{weather.desc}}</text>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{sensorLines.length}}">
+    <view class="section-title">环境感知 <text class="sensor-health">{{sensorHealth}}</text></view>
+    <view class="status-list">
+      <view class="status-row" wx:for="{{sensorLines}}" wx:key="label">
+        <view class="status-label">{{item.label}}</view>
+        <view class="status-value">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{!state && !error}}">
+    <view class="section-title">正在连接…</view>
+    <view class="muted">请确认小陪设备在线</view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">现在想做什么？</view>
+    <view class="action-grid">
+      <view class="action mint" bindtap="go" data-url="/pages/chat/chat">
+        <text>💬</text><view>和小陪聊聊</view>
+        <text class="small">文字对话与播报</text>
+      </view>
+      <view class="action peach" bindtap="go" data-url="/pages/focus/focus">
+        <text>⏳</text><view>开始专注</view>
+        <text class="small">设置学习目标</text>
+      </view>
+      <view class="action blue" bindtap="go" data-url="/pages/mood/mood">
+        <text>🙂</text><view>记录心情</view>
+        <text class="small">让小陪懂你</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="button" loading="{{loading}}" bindtap="refresh">刷新设备状态</button>
+</view>

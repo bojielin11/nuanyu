@@ -1,0 +1,19 @@
+page { background: #fff9ef; color: #3d3024; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.page { min-height: 100vh; box-sizing: border-box; padding: 76rpx 32rpx 40rpx; }
+.eyebrow { color: #d69a31; font-weight: 800; font-size: 24rpx; letter-spacing: 3rpx; }
+.title { margin-top: 10rpx; color: #3a2d22; font-size: 56rpx; font-weight: 800; line-height: 1.2; }
+.subtitle { margin-top: 12rpx; color: #968f83; font-size: 28rpx; }
+.card { margin-top: 28rpx; border-radius: 36rpx; background: #fffefa; box-shadow: 0 12rpx 32rpx rgba(110, 78, 26, .06); padding: 30rpx; }
+.hero { background: linear-gradient(125deg, #ffedb5 0%, #fff3c7 51%, #e7f4dd 100%); min-height: 248rpx; position: relative; overflow: hidden; }
+.hero-title { width: 72%; margin-top: 28rpx; font-size: 42rpx; font-weight: 800; line-height: 1.35; }
+.hero-copy { width: 70%; margin-top: 18rpx; color: #7d7264; font-size: 27rpx; line-height: 1.55; }
+.sun { position: absolute; right: 28rpx; top: 48rpx; width: 130rpx; height: 130rpx; border-radius: 50%; background: #ffc855; box-shadow: 0 0 0 18rpx rgba(255, 198, 68, .18); }
+.sun::after { content: "•ᴗ•"; position: absolute; top: 37rpx; left: 23rpx; color: #71471c; font-size: 40rpx; font-weight: 800; }
+.badge { display: inline-block; padding: 8rpx 18rpx; border-radius: 999rpx; background: rgba(255,255,255,.72); font-size: 24rpx; font-weight: 700; }
+.online { color: #527d4a; }.online::before { content: ""; display: inline-block; width: 14rpx; height: 14rpx; margin-right: 9rpx; border-radius: 50%; background: #63c47b; }
+.section-title { font-size: 35rpx; font-weight: 800; }.section-note { margin-left: 8rpx; color: #938a80; font-size: 25rpx; font-weight: 400; }
+.row { display: flex; align-items: center; }.between { justify-content: space-between; }.muted { color: #938a80; font-size: 26rpx; }.strong { font-size: 35rpx; font-weight: 800; }
+.button { margin-top: 28rpx; border: 0; border-radius: 26rpx; background: linear-gradient(90deg, #ffce52, #ffb957); color: #4a301a; font-weight: 800; font-size: 31rpx; line-height: 96rpx; }
+.button::after { border: 0; }
+.button.secondary { background: #fff1c7; color: #8d601d; }
+.empty { color: #938a80; text-align: center; padding: 32rpx 0; font-size: 27rpx; }

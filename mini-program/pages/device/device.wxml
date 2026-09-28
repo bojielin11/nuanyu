@@ -1,0 +1,45 @@
+<view class="page">
+  <view class="eyebrow">XIAOPEI DEVICE</view>
+  <view class="title">小陪</view>
+  <view class="subtitle">不是设备列表，是你身边的伙伴</view>
+
+  <view class="card hero">
+    <view class="sun big"></view>
+    <view class="device-status">
+      <view class="badge {{state ? (state.assistant_sleeping ? 'offline' : 'online') : ''}}">
+        {{state ? (state.assistant_sleeping ? '小陪在休息' : '小陪在线') : '尚未连接'}}
+      </view>
+      <view class="hero-title">
+        {{state ? (state.assistant_sleeping ? '小陪安静休息中，说"你好小陪"或点唤醒吧。' : '准备好和你一起专注啦。') : '连接服务后查看真实状态。'}}
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">休息 / 唤醒</view>
+    <view class="info-row">
+      <text>当前状态</text>
+      <text>{{state ? (state.assistant_sleeping ? '休息中（静默）' : '清醒') : '—'}}</text>
+    </view>
+    <button class="button {{state && state.assistant_sleeping ? 'warn' : ''}}" loading="{{sleepToggling}}" bindtap="toggleSleep">
+      {{state && state.assistant_sleeping ? '唤醒小陪' : '让小陪休息'}}
+    </button>
+  </view>
+
+  <view class="card">
+    <view class="section-title">设备与能力状态</view>
+    <view class="info-row"><text>语音识别</text><text>{{state && state.asr && state.asr.state || '—'}}</text></view>
+    <view class="info-row"><text>语音播报</text><text>{{state && state.tts && state.tts.state || '—'}}</text></view>
+    <view class="info-row"><text>视觉感知</text><text>{{state && state.vision && state.vision.emotion_zh || '—'}}</text></view>
+    <button class="button" loading="{{loading}}" bindtap="refresh">刷新真实状态</button>
+  </view>
+
+  <view class="card">
+    <view class="section-title">快速指令</view>
+    <view class="quick">
+      <button bindtap="command" data-command="status">查询状态</button>
+      <button bindtap="command" data-command="rest">休息一下</button>
+      <button bindtap="command" data-command="continue">继续陪伴</button>
+    </view>
+  </view>
+</view>

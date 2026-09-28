@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>暖语 · 正在准备</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper:#f5f2e9; --ink:#292722; --muted:#8b867b;
+      --line:#d7d0c1; --rust:#a65335; --sage:#708578;
+      --warn:#b88336; --bad:#a9493f;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; color:var(--ink); background:
+        radial-gradient(circle at 14% 16%,rgba(166,83,53,.08),transparent 31%),
+        linear-gradient(135deg,#faf8f1 0%,var(--paper) 55%,#eee9dd 100%);
+      font-family:"Segoe UI","Microsoft YaHei UI",sans-serif;
+    }
+    body:after {
+      content:""; position:fixed; inset:0; pointer-events:none; opacity:.12;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+    }
+    header {
+      height:88px; display:flex; align-items:center; padding:0 56px;
+      border-bottom:1px solid var(--line); letter-spacing:.08em;
+    }
+    .serial { color:var(--rust); font-weight:700; font-size:13px; }
+    .brand { font-family:Georgia,"Noto Serif SC",serif; font-size:25px; margin-left:18px; }
+    .sub { color:var(--muted); margin-left:12px; font-size:13px; letter-spacing:0; }
+    main {
+      width:min(1120px,calc(100vw - 80px)); margin:58px auto;
+      display:grid; grid-template-columns:1.05fr .95fr; gap:70px;
+    }
+    .eyebrow { color:var(--rust); font-size:12px; letter-spacing:.18em; font-weight:700; }
+    h1 {
+      font-family:Georgia,"Noto Serif SC",serif; font-weight:400;
+      font-size:52px; line-height:1.14; margin:25px 0 18px;
+    }
+    .lead { color:#68645c; font-size:17px; line-height:1.8; max-width:570px; }
+    .pulse {
+      width:110px; height:110px; margin:48px 0 22px; position:relative;
+      border:1px solid var(--line); border-radius:50%;
+    }
+    .pulse:before,.pulse:after {
+      content:""; position:absolute; border-radius:50%; inset:17px;
+      border:1px solid var(--rust); animation:breathe 2s ease-in-out infinite;
+    }
+    .pulse:after { inset:37px; background:var(--rust); animation-delay:.22s; }
+    @keyframes breathe { 50% { transform:scale(.78); opacity:.48; } }
+    .current { font-family:Georgia,"Noto Serif SC",serif; font-size:22px; min-height:32px; }
+    .detail { color:var(--muted); margin-top:8px; min-height:24px; }
+    .panel {
+      background:rgba(255,255,255,.48); border:1px solid var(--line);
+      padding:30px 30px 24px; box-shadow:0 24px 70px rgba(60,47,31,.08);
+    }
+    .panel-head { display:flex; justify-content:space-between; align-items:end; margin-bottom:18px; }
+    .panel-title { font-family:Georgia,"Noto Serif SC",serif; font-size:22px; }
+    .counter { color:var(--muted); font-size:12px; }
+    .steps { list-style:none; margin:0; padding:0; }
+    .step {
+      display:grid; grid-template-columns:24px 1fr auto; gap:12px; align-items:center;
+      padding:13px 0; border-top:1px solid rgba(215,208,193,.72);
+      transition:opacity .2s;
+    }
+    .step:first-child { border-top:0; }
+    .dot { width:9px; height:9px; border-radius:50%; background:#c7c0b3; }
+    .step.running .dot { background:var(--warn); box-shadow:0 0 0 5px rgba(184,131,54,.12); }
+    .step.ok .dot { background:var(--sage); }
+    .step.warn .dot { background:var(--warn); }
+    .step.fail .dot { background:var(--bad); }
+    .step-name { font-size:14px; }
+    .step-note { color:var(--muted); font-size:12px; text-align:right; max-width:175px; }
+    .footer { margin-top:18px; padding-top:18px; border-top:1px solid var(--line); display:flex; gap:12px; }
+    button {
+      border:1px solid #a89f8e; background:transparent; color:var(--ink);
+      padding:10px 18px; font:inherit; cursor:pointer;
+    }
+    button.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+    button:disabled { opacity:.38; cursor:not-allowed; }
+    #log {
+      margin-top:18px; max-height:120px; overflow:auto; color:#777166;
+      white-space:pre-wrap; font:11px/1.55 "Cascadia Mono",Consolas,monospace;
+    }
+    @media(max-width:850px) {
+      main { grid-template-columns:1fr; margin-top:30px; gap:32px; }
+      h1 { font-size:40px; } .pulse { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="serial">NY · DESKTOP</span>
+    <span class="brand">暖语</span>
+    <span class="sub">可靠启动控制台</span>
+  </header>
+  <main>
+    <section>
+      <div class="eyebrow">LISTENING / LEARNING / STAYING</div>
+      <h1>把每一次启动，<br>变成确定的事。</h1>
+      <p class="lead">正在检查板卡、模型、云服务与外设。任何环节短暂失联都会自动重试；需要你处理时，这里会给出明确原因。</p>
+      <div class="pulse"></div>
+      <div class="current" id="current">正在建立运行环境…</div>
+      <div class="detail" id="detail">请保持板卡与电脑连接</div>
+    </section>
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-title">启动检查</div>
+        <div class="counter" id="counter">0 / 10</div>
+      </div>
+      <ol class="steps" id="steps"></ol>
+      <div class="footer">
+        <button class="primary" id="retry" disabled onclick="retry()">重新检查</button>
+        <button onclick="toggleLog()">查看诊断</button>
+      </div>
+      <pre id="log" hidden></pre>
+    </section>
+  </main>
+  <script>
+    const definitions = [
+      ["desktop_bridge","电脑外设桥接"],["adb","连接广和通板卡"],
+      ["port_map","建立稳定通信"],["board_runtime","启动板卡运行时"],
+      ["deepseek","连接 DeepSeek"],["drizzle","加载 Drizzle"],
+      ["stream","连接豆包 Stream"],["surge","加载 Surge / ZipVoice"],
+      ["devices","检查摄像头与扬声器"],["ready","进入暖语"]
+    ];
+    const state = {};
+    const list = document.getElementById("steps");
+    definitions.forEach(([id,name]) => {
+      state[id] = "pending";
+      const li = document.createElement("li"); li.className="step"; li.id="step-"+id;
+      li.innerHTML=`<span class="dot"></span><span class="step-name">${name}</span><span class="step-note">等待</span>`;
+      list.appendChild(li);
+    });
+    function updateCounter() {
+      const done=Object.values(state).filter(x=>x==="ok"||x==="warn").length;
+      document.getElementById("counter").textContent=`${done} / ${definitions.length}`;
+    }
+    window.nuanyu = {
+      update(p) {
+        const li=document.getElementById("step-"+p.id);
+        if(li){ li.className="step "+p.status; li.querySelector(".step-note").textContent=p.note||""; state[p.id]=p.status; }
+        if(p.title) document.getElementById("current").textContent=p.title;
+        if(p.detail!==undefined) document.getElementById("detail").textContent=p.detail;
+        if(p.log){ const el=document.getElementById("log"); el.textContent+=(el.textContent?"\n":"")+p.log; el.scrollTop=el.scrollHeight; }
+        updateCounter();
+      },
+      failed(message) {
+        document.getElementById("current").textContent="启动未完成";
+        document.getElementById("detail").textContent=message;
+        document.getElementById("retry").disabled=false;
+      },
+      complete() {
+        document.getElementById("current").textContent="暖语已经准备好";
+        document.getElementById("detail").textContent="正在进入青山的陪伴空间";
+      }
+    };
+    async function retry(){
+      document.getElementById("retry").disabled=true;
+      await pywebview.api.retry_startup();
+    }
+    function toggleLog(){ document.getElementById("log").hidden=!document.getElementById("log").hidden; }
+  </script>
+</body>
+</html>

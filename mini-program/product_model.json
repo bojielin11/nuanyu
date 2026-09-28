@@ -1,0 +1,27 @@
+{
+  "_comment": "Paste this into Huawei Cloud IoTDA console → Product → Model Definition → Add Service",
+  "service_id": "xiaopei_relay",
+  "service_type": "xiaopei_relay",
+  "description": "Mini-program API relay commands",
+  "properties": [],
+  "commands": [
+    {
+      "command_name": "api_proxy",
+      "paras": [
+        {"para_name": "request_id", "data_type": "string", "required": true, "description": "Business trace ID"},
+        {"para_name": "method", "data_type": "string", "required": true, "description": "HTTP method", "enum_list": ["GET", "POST"]},
+        {"para_name": "path", "data_type": "string", "required": true, "description": "API path, e.g. /api/status"},
+        {"para_name": "body_json", "data_type": "string", "required": false, "description": "JSON-encoded POST body"}
+      ],
+      "responses": [
+        {
+          "response_name": "COMMAND_RESPONSE",
+          "paras": [
+            {"para_name": "status_code", "data_type": "int", "required": true, "description": "HTTP status from board"},
+            {"para_name": "body_json", "data_type": "string", "required": false, "description": "JSON-encoded response body"}
+          ]
+        }
+      ]
+    }
+  ]
+}

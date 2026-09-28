@@ -1,0 +1,9 @@
+{
+  "desc": "Xiaopei companion mini program",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}
