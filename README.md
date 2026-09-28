@@ -1,11 +1,5 @@
 # Nuanyu (暖语) — Proactive Emotional Companion Robot
 
-**Beijing University of Posts and Telecommunications** (北京邮电大学)
-**Bojie Lin · Chenyu Liu · Chuyi Liang** (林渤杰 · 刘晨语 · 梁楚仪)
-
-*Built for the 2026 Embedded Chip and System Design Competition — Fibocom Smart
-Connectivity Cup (2026 嵌入式芯片与系统设计竞赛 · 广和通智联杯).*
-
 An on-device AI companion robot that runs entirely on an embedded ARM board — speech
 recognition, an LLM conversation loop, three interchangeable text-to-speech backends,
 facial-expression recognition, ambient sensing and physical motion, all coordinated by a
